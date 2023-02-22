@@ -8,9 +8,19 @@
 
 .cardCharacter > img {
   width: 100%;
+  max-width: 100%;
 }
 
-.cardCharacter{
-  border: 2px solid rgba(0, 0, 0, 0.705);
+.cardCharacterMale{
+  border: 2px solid rgba(54, 153, 51, 0.842);
   border-radius: 5px;
+  background: rgba(54, 153, 51, 0.842);
+  color: white;
+}
+
+.cardCharacterFemale{
+  border: 2px solid rgba(102, 51, 153, 0.692);
+  border-radius: 5px;
+  background: rgba(102, 51, 153, 0.692);
+  color: rgb(123, 25, 221);;
 }
