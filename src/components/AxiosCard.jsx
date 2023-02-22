@@ -6,7 +6,7 @@ export const AxiosCard = ({axiosCharacters}) => {
     <div className='containerCard'>
       {axiosCharacters.map((character) => (
         <div className={character.gender === 'Male' ? 'cardCharacterMale' : 'cardCharacterFemale'} key={character.id}>
-          <img src={character.image}/>
+          <img className='imgCard' src={character.image}/>
           <h2>{character.name}</h2>
           <p>Location:{character.location}</p>
           <p>Gender:{character.gender}</p>
