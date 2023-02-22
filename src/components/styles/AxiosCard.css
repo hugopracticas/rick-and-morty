@@ -1,0 +1,16 @@
+
+.containerCard{
+  display: grid;
+  grid-gap: 20px 8px;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+}
+
+.cardCharacter > img {
+  width: 100%;
+}
+
+.cardCharacter{
+  border: 2px solid rgba(0, 0, 0, 0.705);
+  border-radius: 5px;
+}

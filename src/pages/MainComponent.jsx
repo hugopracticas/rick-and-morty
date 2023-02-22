@@ -1,22 +1,38 @@
-import { useState, useEffect } from 'react';
-import { getRickMorty } from '../data/getDataApi';
+import { useEffect, useState } from 'react';
+import { fetchRickMortyApi } from '../data/getDataApi';
+import {FetchCard} from '../components/FetchCard';
+import { AxiosCard } from '../components/AxiosCard';
+import { getRickMortyAxios } from '../data/getDataApiAxios';
+
 
 export const MainComponent = () => {
 
-  const [data, setData] = useState();
+  const [fetchCharacter, setFetchCharacter] = useState([]);
+  const [axiosCharacters, setAxiosCharacter] = useState([]);
 
-  const getData = async() => {
-    const newInfo = getRickMorty();
-    setData( newInfo );
+  /**Method with Fetch */
+  const loadFetchApi = async() => {
+    const method = await fetchRickMortyApi();
+    setFetchCharacter( method ); 
+  }
+
+  /**Method with Axios*/
+  const loadAxiosApi = async() => {
+    const axiosMethod = await getRickMortyAxios();
+    setAxiosCharacter(axiosMethod);
   }
 
   useEffect(() => {
-    getData();
-  },[])
+    //loadFetchApi()
+    loadAxiosApi();
+  }, [])
 
+  
   return(
     <div>
-      <h1>Lista</h1>
+      <h1>Rick and Morty Api</h1>
+      {/* <FetchCard fetchCharacter={fetchCharacter} /> */}
+      <AxiosCard axiosCharacters={axiosCharacters}/>
     </div>
   )
 }
